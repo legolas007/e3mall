@@ -19,9 +19,10 @@ public class ItemServiceImpl implements ItemService {
 
 	@Autowired
 	private TbItemMapper itemMapper;
-	
+
 	@Override
 	public TbItem getItemById(long itemId) {
+		// TODO Auto-generated method stub
 		//根据主键查询
 		//TbItem tbItem = itemMapper.selectByPrimaryKey(itemId);
 		TbItemExample example = new TbItemExample();
@@ -30,7 +31,7 @@ public class ItemServiceImpl implements ItemService {
 		criteria.andIdEqualTo(itemId);
 		//执行查询
 		List<TbItem> list = itemMapper.selectByExample(example);
-		if (list != null && list.size() > 0) {
+		if(list != null && list.size() > 0) {
 			return list.get(0);
 		}
 		return null;
