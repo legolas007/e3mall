@@ -49,7 +49,6 @@ public class ItemServiceImpl implements ItemService {
 		PageHelper.startPage(page, rows);
 		//执行查询
 		TbItemExample example = new TbItemExample();
-
 		List<TbItem> list = itemMapper.selectByExample(example);
 		//创建返回结果对象
 		EasyUIDataGridResult result = new EasyUIDataGridResult();
