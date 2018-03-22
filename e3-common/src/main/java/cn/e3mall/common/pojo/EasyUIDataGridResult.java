@@ -9,6 +9,10 @@ import java.util.List;
  *
  */
 public class EasyUIDataGridResult implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long total;
 	private List rows;
 	public long getTotal() {
