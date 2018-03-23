@@ -6,6 +6,11 @@ import java.util.List;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Json数据包含status的属性，使用E3Result
+ * @author usher
+ *
+ */
 public class E3Result implements Serializable {
 
 	// 定义jackson对象
