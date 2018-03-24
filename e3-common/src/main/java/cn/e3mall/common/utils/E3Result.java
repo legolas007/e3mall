@@ -86,7 +86,7 @@ public class E3Result implements Serializable {
 	// }
 	
 	/**
-	 * 将json结果集转化为TaotaoResult对象
+	 * 将json结果集转化为E3Result对象
 	 * 
 	 * @param jsonData
 	 *            json数据
