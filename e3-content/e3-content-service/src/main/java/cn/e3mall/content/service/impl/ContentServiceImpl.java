@@ -15,10 +15,6 @@ import cn.e3mall.pojo.TbContentExample.Criteria;
 
 /**
  * 内容管理Service
- * <p>Title: ContentServiceImpl</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
- * @version 1.0
  */
 @Service
 public class ContentServiceImpl implements ContentService {
@@ -38,12 +34,7 @@ public class ContentServiceImpl implements ContentService {
 
 	/**
 	 * 根据内容分类id查询内容列表
-	 * <p>Title: getContentListByCid</p>
-	 * <p>Description: </p>
-	 * @param cid
-	 * @return
-	 * @see cn.e3mall.content.service.ContentService#getContentListByCid(long)
-	 */
+	*/
 	@Override
 	public List<TbContent> getContentListByCid(long cid) {
 		TbContentExample example = new TbContentExample();
