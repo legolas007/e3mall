@@ -17,10 +17,6 @@ import cn.e3mall.pojo.TbContentCategoryExample.Criteria;
 
 /**
  * 内容分类管理Service
- * <p>Title: ContentCategoryServiceImpl</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
- * @version 1.0
  */
 @Service
 public class ContentCategoryServiceImpl implements ContentCategoryService {

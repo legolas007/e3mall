@@ -1,6 +1,9 @@
 I:\Django\宜立方\e3商城_day01\黑马32期\day01\source\e3-common\src\main\java\cn\e3mall\common\utils\FastDFSClient.java
+I:\Django\宜立方\e3商城_day01\黑马32期\day01\source\e3-common\src\main\java\cn\e3mall\common\jedis\JedisClient.java
+I:\Django\宜立方\e3商城_day01\黑马32期\day01\source\e3-common\src\main\java\cn\e3mall\common\jedis\JedisClientCluster.java
 I:\Django\宜立方\e3商城_day01\黑马32期\day01\source\e3-common\src\main\java\cn\e3mall\common\pojo\EasyUIDataGridResult.java
 I:\Django\宜立方\e3商城_day01\黑马32期\day01\source\e3-common\src\main\java\cn\e3mall\common\utils\JsonUtils.java
 I:\Django\宜立方\e3商城_day01\黑马32期\day01\source\e3-common\src\main\java\cn\e3mall\common\utils\IDUtils.java
+I:\Django\宜立方\e3商城_day01\黑马32期\day01\source\e3-common\src\main\java\cn\e3mall\common\jedis\JedisClientPool.java
 I:\Django\宜立方\e3商城_day01\黑马32期\day01\source\e3-common\src\main\java\cn\e3mall\common\pojo\EasyUITreeNode.java
 I:\Django\宜立方\e3商城_day01\黑马32期\day01\source\e3-common\src\main\java\cn\e3mall\common\utils\E3Result.java
