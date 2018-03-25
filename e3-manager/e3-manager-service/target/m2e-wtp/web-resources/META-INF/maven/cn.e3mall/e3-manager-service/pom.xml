@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>cn.e3mall</groupId>
-		<artifactId>e3-content</artifactId>
+		<artifactId>e3-manager</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>e3-content-service</artifactId>
 	<packaging>war</packaging>
+	<artifactId>e3-manager-service</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>cn.e3mall</groupId>
@@ -16,7 +16,7 @@
 		</dependency>
 		<dependency>
 			<groupId>cn.e3mall</groupId>
-			<artifactId>e3-content-interface</artifactId>
+			<artifactId>e3-manager-interface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<!-- Spring -->
@@ -71,11 +71,5 @@
 			<groupId>com.github.sgroschupf</groupId>
 			<artifactId>zkclient</artifactId>
 		</dependency>
-		
-		<!-- Redis客户端 -->
-			<dependency>
-				<groupId>redis.clients</groupId>
-				<artifactId>jedis</artifactId>
-			</dependency>
 	</dependencies>
 </project>
