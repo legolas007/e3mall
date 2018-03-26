@@ -14,10 +14,6 @@ import cn.e3mall.search.service.SearchItemService;
 
 /**
  * 索引库维护Service
- * <p>Title: SearchItemServiceImpl</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
- * @version 1.0
  */
 @Service
 public class SearchItemServiceImpl implements SearchItemService {
