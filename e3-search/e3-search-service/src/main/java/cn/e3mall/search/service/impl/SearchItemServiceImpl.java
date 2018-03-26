@@ -7,6 +7,8 @@ import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.druid.sql.ast.expr.SQLCaseExpr.Item;
+
 import cn.e3mall.common.pojo.SearchItem;
 import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.search.mapper.ItemMapper;
@@ -17,19 +19,21 @@ import cn.e3mall.search.service.SearchItemService;
  */
 @Service
 public class SearchItemServiceImpl implements SearchItemService {
-
+	
 	@Autowired
 	private ItemMapper itemMapper;
 	@Autowired
 	private SolrServer solrServer;
 	
+
 	@Override
 	public E3Result importAllItems() {
+		// TODO Auto-generated method stub
 		try {
 			//查询商品列表
 			List<SearchItem> itemList = itemMapper.getItemList();
 			//遍历商品列表
-			for (SearchItem searchItem : itemList) {
+			for(SearchItem searchItem : itemList) {
 				//创建文档对象
 				SolrInputDocument document = new SolrInputDocument();
 				//向文档对象中添加域
@@ -46,11 +50,14 @@ public class SearchItemServiceImpl implements SearchItemService {
 			solrServer.commit();
 			//返回导入成功
 			return E3Result.ok();
+			
 		} catch (Exception e) {
+			// TODO: handle exception
 			e.printStackTrace();
-			return E3Result.build(500, "数据导入时发生异常");
-					
+			return E3Result.build(500, "数据插入异常");
 		}
 	}
+
+	
 
 }
