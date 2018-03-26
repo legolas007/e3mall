@@ -40,6 +40,7 @@ public class TestSolrJ {
 	 * 删除
 	 * @throws Exception
 	 */
+	@Ignore
 	@Test
 	public void deleteDocument() throws Exception {
 		SolrServer solrServer = new HttpSolrServer("http://192.168.25.128:8080/solr/collection1");
@@ -49,7 +50,7 @@ public class TestSolrJ {
 		//提交
 		solrServer.commit();
 	}
-	@Ignore
+
 	@Test
 	public void queryIndex() throws Exception {
 		//创建一个SolrServer对象。
