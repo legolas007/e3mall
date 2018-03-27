@@ -14,36 +14,32 @@ import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.content.service.ContentCategoryService;
 
 /**
- * 内容分类管理
- * 
- * @author usher
- *
+ * 内容分类管理Controller
  */
-
 @Controller
 public class ContentCatController {
 
 	@Autowired
 	private ContentCategoryService contentCategoryService;
-
+	
 	@RequestMapping("/content/category/list")
 	@ResponseBody
-	public List<EasyUITreeNode> getContentCatList(@RequestParam(name = "id", defaultValue = "0") Long parentId) {
+	public List<EasyUITreeNode> getContentCatList(
+			@RequestParam(name="id", defaultValue="0")Long parentId) {
 		List<EasyUITreeNode> list = contentCategoryService.getContentCatList(parentId);
 		return list;
 	}
 	
 	/**
 	 * 添加分类节点
-	 * @param parentId
-	 * @param name
-	 * @return
 	 */
 	@RequestMapping(value="/content/category/create", method=RequestMethod.POST)
 	@ResponseBody
 	public E3Result createContentCategory(Long parentId, String name) {
-		
+		//调用服务添加节点
 		E3Result e3Result = contentCategoryService.addContentCategory(parentId, name);
 		return e3Result;
 	}
+	
+	
 }

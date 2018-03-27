@@ -10,16 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-
-
 import cn.e3mall.common.utils.FastDFSClient;
 import cn.e3mall.common.utils.JsonUtils;
-import javassist.compiler.ast.NewExpr;
 
 /**
- * 图片处理
- * @author usher
- *
+ * 图片上传处理Controller
  */
 @Controller
 public class PictureController {

@@ -28,24 +28,22 @@ public class ItemController {
 		return tbItem;
 	}
 	
-	@RequestMapping("/item/list")//page=?&rows=?
+	@RequestMapping("/item/list")
 	@ResponseBody
-	public EasyUIDataGridResult getItemList(Integer page,Integer rows) {
-		//商品查询列表
+	public EasyUIDataGridResult getItemList(Integer page, Integer rows) {
+		//调用服务查询商品列表
 		EasyUIDataGridResult result = itemService.getItemList(page, rows);
 		return result;
 	}
 	
 	/**
-	 * 商品添加
-	 * @param item
-	 * @param desc
-	 * @return
+	 * 商品添加功能
 	 */
-	@RequestMapping(value="/item/save",method=RequestMethod.POST)
+	@RequestMapping(value="/item/save", method=RequestMethod.POST)
 	@ResponseBody
 	public E3Result addItem(TbItem item, String desc) {
 		E3Result result = itemService.addItem(item, desc);
 		return result;
 	}
+	
 }

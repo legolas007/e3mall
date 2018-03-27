@@ -8,16 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.e3mall.common.pojo.EasyUITreeNode;
 import cn.e3mall.service.ItemCatService;
 
-import cn.e3mall.common.pojo.EasyUITreeNode;
 /**
- * 商品管理controller
- * @author usher
- *
+ * 商品分类管理Controller
  */
 @Controller
 public class ItemCatController {
+
 	@Autowired
 	private ItemCatService itemCatService;
 	
@@ -30,5 +29,4 @@ public class ItemCatController {
 		return list;
 		
 	}
-
 }

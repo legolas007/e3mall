@@ -9,21 +9,19 @@ import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.search.service.SearchItemService;
 
 /**
- * 導入商品到solr索引庫
- * 
- * @author usher
- *
+ * 导入商品数据到索引库
  */
 @Controller
 public class SearchItemController {
-
+	
 	@Autowired
 	private SearchItemService searchItemService;
+
 	@RequestMapping("/index/item/import")
 	@ResponseBody
 	public E3Result importItemList() {
 		E3Result e3Result = searchItemService.importAllItems();
 		return e3Result;
+		
 	}
-	
 }
