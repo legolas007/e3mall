@@ -50,7 +50,11 @@ public class TestSolrJ {
 		//提交
 		solrServer.commit();
 	}
-
+	/**
+	 * 简单搜索
+	 * @throws Exception
+	 */
+	@Ignore
 	@Test
 	public void queryIndex() throws Exception {
 		//创建一个SolrServer对象。
@@ -75,7 +79,11 @@ public class TestSolrJ {
 			System.out.println(solrDocument.get("item_category_name"));
 		}
 	}
-	@Ignore
+
+	/**
+	 * 复杂搜索
+	 * @throws Exception
+	 */
 	@Test
 	public void queryIndexFuza() throws Exception {
 		SolrServer solrServer = new HttpSolrServer("http://192.168.25.128:8080/solr/collection1");
