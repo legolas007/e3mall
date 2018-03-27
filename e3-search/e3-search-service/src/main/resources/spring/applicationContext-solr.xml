@@ -7,9 +7,9 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
-<!-- HttpSolrServer对象bean注入配置 -->
+
 	<bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
-		<constructor-arg index="0" value="http://192.168.25.128:8080/solr/collection1"/>
+		<constructor-arg index="0" value="http://192.168.25.129:8080/solr/collection1"/>
 	</bean>
 	
 </beans>

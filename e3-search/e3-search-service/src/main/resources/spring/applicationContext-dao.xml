@@ -29,7 +29,6 @@
 		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	<!-- 扫描注入包Mapper -->
 		<property name="basePackage" value="cn.e3mall.mapper,cn.e3mall.search.mapper" />
 	</bean>
 </beans>
