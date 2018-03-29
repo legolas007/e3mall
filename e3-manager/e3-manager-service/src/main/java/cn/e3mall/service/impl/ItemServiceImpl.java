@@ -3,7 +3,16 @@ package cn.e3mall.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
@@ -31,6 +40,11 @@ public class ItemServiceImpl implements ItemService {
 	private TbItemMapper itemMapper;
 	@Autowired
 	private TbItemDescMapper itemDescMapper;
+	@Autowired
+	private JmsTemplate jmsTemplate;
+	@Resource
+	private Destination topicDestination;
+	
 	@Override
 	public TbItem getItemById(long itemId) {
 		// TODO Auto-generated method stub
@@ -74,7 +88,7 @@ public class ItemServiceImpl implements ItemService {
 	public E3Result addItem(TbItem item, String desc) {
 		// TODO Auto-generated method stub
 		//生成商品id
-		long itemId = IDUtils.genItemId();
+		final long itemId = IDUtils.genItemId();
 		//补全item的属性
 		item.setId(itemId);
 		//1-正常，2-下架，3-删除
@@ -93,10 +107,30 @@ public class ItemServiceImpl implements ItemService {
 		itemDesc.setUpdated(new Date());
 		//向商品描述表插入数据
 		itemDescMapper.insert(itemDesc);
+		//发送商品添加消息
+		jmsTemplate.send(topicDestination, new MessageCreator() {
+			
+			@Override
+			public Message createMessage(Session session) throws JMSException {
+				// TODO Auto-generated method stub
+				TextMessage textMessage = session.createTextMessage(itemId + "");
+				return textMessage;
+			}
+		});
 		//返回成功
 		return E3Result.ok();
 	}
-	
+
+	@Override
+	public TbItemDesc getItemDescById(long itemId) {
+		// TODO Auto-generated method stub
+		TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
+		return itemDesc;
+		
+	}
+
+
+
 	
 	
 

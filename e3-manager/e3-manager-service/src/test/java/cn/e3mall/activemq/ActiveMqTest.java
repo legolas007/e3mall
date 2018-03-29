@@ -14,11 +14,12 @@ import javax.jms.Topic;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQTextMessage;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ActiveMqTest {
 	
-
+	@Ignore
 	@Test
 	public void testQueueProducer() throws Exception{
 		//创建一个连接工厂对象，需要指定服务的ip及端口
@@ -53,7 +54,7 @@ public class ActiveMqTest {
 		connection.start();
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 		//使用Session对象创建一个Destination对象。两种形式queue、topic
-		Queue queue = session.createQueue("test-queue");
+		Queue queue = session.createQueue("spring-queue");
 		//使用Session对象创建一个Consume对象
 		MessageConsumer consumer = session.createConsumer(queue);
 		
@@ -81,7 +82,7 @@ public class ActiveMqTest {
 		session.close();
 		connection.close();
 	}
-	
+	@Ignore
 	@Test
 	public void testTopicProducer() throws Exception {
 		//1、创建一个连接工厂对象，需要指定服务的ip及端口。
@@ -109,7 +110,7 @@ public class ActiveMqTest {
 		session.close();
 		connection.close();
 	}
-	
+	@Ignore
 	@Test
 	public void testTopicConsumer() throws Exception {
 		//创建一个ConnectionFactory对象连接MQ服务器
