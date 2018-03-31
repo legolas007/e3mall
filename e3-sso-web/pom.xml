@@ -86,6 +86,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
+		
 	</dependencies>
 	<!-- 配置tomcat插件 -->
 	<build>
