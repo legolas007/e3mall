@@ -12,20 +12,21 @@ import cn.e3mall.common.pojo.SearchItem;
 import cn.e3mall.search.mapper.ItemMapper;
 
 /**
- * 监听商品添加信息，接收信息后，将对应的商品信息同步到索引库
- * @author usher
- *
+ * 监听商品添加消息，接收消息后，将对应的商品信息同步到索引库
+ * <p>Title: ItemAddMessageListener</p>
+ * <p>Description: </p>
+ * <p>Company: www.itcast.cn</p> 
+ * @version 1.0
  */
-public class ItemAddMessageListener implements MessageListener{
-
+public class ItemAddMessageListener implements MessageListener {
+	
 	@Autowired
 	private ItemMapper itemMapper;
 	@Autowired
 	private SolrServer solrServer;
-	
+
 	@Override
 	public void onMessage(Message message) {
-		// TODO Auto-generated method stub
 		try {
 			//从消息中取商品id
 			TextMessage textMessage = (TextMessage) message;
@@ -37,7 +38,6 @@ public class ItemAddMessageListener implements MessageListener{
 			SearchItem searchItem = itemMapper.getItemById(itemId);
 			//创建一个文档对象
 			SolrInputDocument document = new SolrInputDocument();
-			
 			//向文档对象中添加域
 			document.addField("id", searchItem.getId());
 			document.addField("item_title", searchItem.getTitle());
@@ -49,12 +49,10 @@ public class ItemAddMessageListener implements MessageListener{
 			solrServer.add(document);
 			//提交
 			solrServer.commit();
-			
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
+
 	}
 
-	
 }

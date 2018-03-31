@@ -18,6 +18,10 @@ import cn.e3mall.common.pojo.SearchResult;
 
 /**
  * 商品搜索dao
+ * <p>Title: SearchDao</p>
+ * <p>Description: </p>
+ * <p>Company: www.itcast.cn</p> 
+ * @version 1.0
  */
 @Repository
 public class SearchDao {

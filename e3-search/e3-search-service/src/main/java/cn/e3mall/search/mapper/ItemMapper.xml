@@ -16,7 +16,7 @@
 			a.`status` = 1
 	</select>
 	<select id="getItemById" parameterType="long" resultType="cn.e3mall.common.pojo.SearchItem">
-	SELECT
+		SELECT
 			a.id,
 			a.title,
 			a.sell_point,
@@ -29,6 +29,5 @@
 		WHERE
 			a.`status` = 1
 		AND a.id=#{itemid}
-	
 	</select>
 </mapper>

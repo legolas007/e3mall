@@ -10,6 +10,10 @@ import cn.e3mall.search.service.SearchService;
 
 /**
  * 商品搜索Service
+ * <p>Title: SearchServiceImpl</p>
+ * <p>Description: </p>
+ * <p>Company: www.itcast.cn</p> 
+ * @version 1.0
  */
 @Service
 public class SearchServiceImpl implements SearchService {
