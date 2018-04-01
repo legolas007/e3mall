@@ -98,6 +98,31 @@ public class CartController {
 		request.setAttribute("cartList", cartList);
 		return "cart";
 	}
+	/**
+	 * 更新
+	 * @param itemId
+	 * @param num
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 
+	@RequestMapping("/cart/update/num/{itemId}/{num}")
+	@ResponseBody
+	public E3Result updateCartNum(@PathVariable Long itemId,@PathVariable Integer num,HttpServletRequest request,HttpServletResponse response) {
+		
+		List<TbItem> cartList = getCartListFromCookie(request);
+		for(TbItem tbItem : cartList) {
+			if (tbItem.getId().longValue() == itemId) {
+				
+				tbItem.setNum(num);
+				break;
+			}
+		}
+		//写入cookie
+		CookieUtils.setCookie(request, response, "cart", JsonUtils.objectToJson(cartList), COOKIE_CART_EXPIRE, true);
+		//返回添加成功页面
+		return E3Result.ok();
+	}
 
 }
