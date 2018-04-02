@@ -21,9 +21,22 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Autowired
 	private TokenService tokenService;
 
+	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+		String token = CookieUtils.getCookieValue(request, "token");
+		if (StringUtils.isBlank(token)) {
+			return true;
+		}
+		E3Result e3Result = tokenService.getUserByToken(token);
 		
+		if (e3Result.getStatus() != 200) {
+			return true;
+		}
+		
+		TbUser user = (TbUser)e3Result.getData();
+		request.setAttribute("user", user);
+		return true;
 	}
 	
 	@Override

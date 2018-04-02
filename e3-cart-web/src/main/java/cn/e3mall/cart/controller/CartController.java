@@ -124,5 +124,30 @@ public class CartController {
 		//返回添加成功页面
 		return E3Result.ok();
 	}
-
+	
+	/**
+	 * 删除
+	 * @param itemId
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("/cart/delete/{itemId}")
+	public String deleteCartItem(@PathVariable Long itemId,HttpServletRequest request,
+			HttpServletResponse response) {
+		List<TbItem> cartList = getCartListFromCookie(request);
+		
+		for(TbItem tbItem : cartList) {
+			if (tbItem.getId().longValue() == itemId) {
+				
+				cartList.remove(tbItem);
+				break;
+			}
+		}
+		//写入cookie
+		CookieUtils.setCookie(request, response, "cart", JsonUtils.objectToJson(cartList), COOKIE_CART_EXPIRE, true);
+		//返回
+		return "redirect:/cart/cart.html";
+		
+	}
 }
