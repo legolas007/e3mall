@@ -55,7 +55,7 @@
     <div class="orderItem">
         <div class="orderCurr" id="userAddress" style="display:block;">
           <ul>
-            <li>入云龙&nbsp;&nbsp;&nbsp;&nbsp;15800888888&nbsp;&nbsp;&nbsp;&nbsp;北京市&nbsp;&nbsp;昌平区&nbsp;&nbsp;北七家镇 修正大厦</li>
+            <li>Usher&nbsp;&nbsp;&nbsp;&nbsp;15800888888&nbsp;&nbsp;&nbsp;&nbsp;青岛市&nbsp;&nbsp;黄岛区&nbsp;&nbsp;万达</li>
           </ul>
         </div>
     </div>
